@@ -20,36 +20,36 @@
 - **Development Tool**: Cursor AI
 - **상태관리**: Zustand
 
-## 📁 주요 프로젝트 구조
+## 📁 프로젝트 구조
 ```
 src/
-├── pages/           # 페이지 컴포넌트
-│   ├── Home.jsx          # 시작 화면
-│   ├── Auth.jsx          # 회원가입/로그인 페이지
-│   ├── Lobby.jsx         # 게임 로비 (방 생성/참여)
-│   └── Game.jsx          # 실제 게임 진행 페이지
+├── assets/          # 이미지, 아이콘 등 정적 리소스
+├── components/      # 재사용 가능한 컴포넌트
+│   └── game/       # 게임 관련 컴포넌트
+│       ├── room/   # 게임방 관련 컴포넌트
+│       ├── field/  # 게임 필드 컴포넌트
+│       ├── ui/     # UI 컴포넌트
+│       └── SocketProvider.jsx
 │
-├── store/           # 전역 상태 관리
-│   ├── gameStore.js      # 게임 상태 (점수, 라운드, 타이머 등)
-│   ├── userStore.js      # 유저 정보 (로그인, 프로필 등)
-│   └── roomStore.js      # 방 정보 (참가자, 준비 상태 등)
+├── config/         # 설정 파일
+├── layouts/        # 레이아웃 컴포넌트
+├── lib/           # 유틸리티 및 라이브러리
+│   └── firebase.js # Firebase 설정 및 함수
 │
-├── components/game/
-│   ├── room/        # 게임방 생성/참여 관련 컴포넌트
-│   │   ├── CreateGame.jsx    # 새로운 게임방 생성
-│   │   └── JoinGame.jsx      # 코드로 게임방 참여
-│   │
-│   ├── field/       # 실제 게임 진행 컴포넌트
-│   │   ├── GameField.jsx     # 게임 화면 및 음원 재생
-│   │   ├── Chat.jsx          # 실시간 채팅 및 정답 제출
-│   │   └── Score.jsx         # 실시간 점수 집계
-│   │
-│   ├── ui/          # 게임 UI 컴포넌트
-│   │   ├── Timer.jsx         # 게임 타이머
-│   │   ├── PlayerList.jsx    # 참가자 목록
-│   │   └── ReadyButton.jsx   # 게임 준비 상태 관리
-│   │
-└── └── SocketProvider.jsx    # WebSocket 연결 및 이벤트 관리
+├── pages/         # 페이지 컴포넌트
+│   ├── Game.jsx   # 게임 페이지
+│   ├── Login.jsx  # 로그인 페이지
+│   └── Signup.jsx # 회원가입 페이지
+│
+├── scripts/       # 스크립트 파일
+├── store/         # 상태 관리 (Zustand)
+│   ├── authStore.js  # 인증 관련 상태
+│   ├── gameStore.js  # 게임 관련 상태
+│   └── socketStore.js # 소켓 관련 상태
+│
+├── App.jsx        # 앱 진입점
+├── main.jsx      # React 진입점
+└── index.css     # 전역 스타일
 ```
 ## 🎯 게임 플레이 플로우
 
